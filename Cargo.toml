@@ -1,0 +1,30 @@
+[package]
+name = "hash_demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "*"
+sha2 = "*"
+
+[dev-dependencies]
+criterion = "*"
+
+[lib]
+name = "lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "bin"
+path = "src/main.rs"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+#debug = true
+
